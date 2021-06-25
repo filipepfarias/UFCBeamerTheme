@@ -1,0 +1,84 @@
+\documentclass[usenames,dvipsnames,aspectratio=149, 8pt]{beamer}
+
+\usepackage{beamerthemeufc} 
+% Just for note {\scshape Smaller Title}
+\title[\textbf{\uppercase{Smaller Title}}]{Example Presentation Created with the Beamer Package}
+\subtitle{A subtitle example}
+\author[F. P. Farias]{Filipe P. de Farias}
+\institute[UFC]{Department of Teleinformatics Engineering\\Universidade Federal do Ceará}
+\titlegraphic{\includegraphics[width=25pt]{graphics/brasao4_vertical_cor}}
+\date{\today}
+
+
+%% Bibliography
+\usepackage[style=authoryear]{biblatex}
+\addbibresource{bibliography.bib}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Introduction}
+\subsection{Overview of the Beamer Class}
+
+\frame
+{\justifying
+\frametitle{Features of the Beamer Class}
+
+This is a demonstration of {\bf\color{UFCOrange}UFC Beamer Theme} made by \insertshortauthor{}.
+
+\begin{itemize}
+\item<1-> Normal LaTeX class.
+\item<2-> Easy overlays.
+\item<3-> No external programs needed.      
+\end{itemize}
+
+\begin{columns}
+\column{.5\textwidth}
+This is a demonstration of two columns.
+\column{.5\textwidth}
+This is a demonstration of two columns.
+\end{columns}
+}
+
+\frame
+{\frametitle{Features of the Beamer Class}
+
+    \begin{block}{Remark}
+    Sample text
+    \end{block}
+    
+    \begin{alertblock}{Important theorem}
+    Sample text in red box
+    \end{alertblock}
+    
+    \begin{examples}
+    Sample text in green box. The title of the block is ``Examples''.
+    \end{examples}
+
+}
+\section{Second Section}
+\subsection{Overview of the Beamer Class}
+\frame
+{
+  \frametitle{Features of the Beamer Class}
+
+    \begin{block}{Remark}
+    Sample text
+    \end{block}
+    
+    \begin{alertblock}{Important theorem}
+    Sample text in red box
+    \end{alertblock}
+    
+    \begin{examples}
+    Sample text in green box. The title of the block is ``Examples''. \cite{article1}
+    \end{examples}
+
+}
+
+\nocite{*}
+\begin{frame}[allowframebreaks]{Bibliography}
+\printbibliography
+\end{frame}
+\end{document}

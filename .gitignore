@@ -1,5 +1,4 @@
 .DS_Store
-UFCBeamerTheme.tex
 *.log
 *.nav
 *.snm
@@ -11,4 +10,4 @@ UFCBeamerTheme.tex
 *.bbl
 *.bcf
 *.blg
-*run.xml
+*.run.xml
