@@ -1,4 +1,4 @@
-% !TEX root = Applications_in_Disease_GP.tex
+% !TEX root = UFCBeamerTheme.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%										%%%%%
 %%%%%				~WARNING~				%%%%%
@@ -14,9 +14,6 @@
 
 \mode<presentation>
 
-% comment/uncomment this line to enable/disable debug mode
-%\newcommand*{\DEBUG}{}
-
 % Requirement
 \RequirePackage{xcolor}	% colors
 \RequirePackage{tikz}	% drawing 
@@ -28,6 +25,18 @@
 \usepackage{pgfplots} 
 \usepgfplotslibrary{fillbetween}
 \usepackage[margin=1cm,justification=justified]{caption}
+
+
+%Sidebar
+\useoutertheme[left, height=0pt, width=60pt]{sidebar}
+
+\usecolortheme{ufc}
+\setbeamercolor*{titlelike}{parent=structure}
+
+%\useinnertheme{circles}
+%\setbeamertemplate{frametitle}[default][right]
+% comment/uncomment this line to enable/disable debug mode
+%\newcommand*{\DEBUG}{}
 
 % Draft
 \iffalse
@@ -49,10 +58,15 @@
 \usecolortheme{ufc}
 \usefonttheme{ufc}
 
+% Bullets transparency
+\setbeamercovered{transparent}
+
 % Section titles
 \AtBeginSection[]{
-\framecard{\insertsection}
+\framecard[]{\insertsection}
 }
+
+\iffalse
 % Footnote marks
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \usepackage{perpage} \MakePerPage{footnote}
@@ -125,7 +139,7 @@
         line width=.25mm,
     }
 }
-
+\fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%										%%%%%
 %%%%%			~BONUS COMMANDS~			%%%%%
@@ -139,30 +153,19 @@
 %%%%%	~Frame with huge centered text~		%%%%%
 %%%%%										%%%%%
 
-\newcommand{\framecard}[2][UFCBlue]{
-    {\setbeamercolor{background canvas}{bg=#1}%
-    \setbeamertemplate{background}{
-    \begin{tikzpicture}
-        \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
-        
-        % background logo
-        \node[inner sep=0pt] (logo) at (1,3.25){\includegraphics[height=15cm]{graphics/brasao4_vertical_gray}};
-        % Three-colored line
-        \fill[color=UFCGold] (0,1.25-.86) rectangle(1,1.3-.86);
-        \fill[color=UFCOrange] (1,1.25-.86) rectangle(2,1.3-.86);
-        \fill[color=UFCBlue] (2,1.25-.86) rectangle(\the\paperwidth,1.3-.86);
-    \end{tikzpicture}
-    }
-      \begin{frame}[plain]%
-        \vfill%
-        \begin{center}%
-          {\color{white}\Huge\textbf{%
-            {#2}%
-          }}%
-        \end{center}%
-        \vfill%
-      \end{frame}%
-  }
+\newcommand{\framecard}[2][1]{
+{
+  \begin{frame}%
+    \vfill%
+    \begin{beamercolorbox}[sep=1pt,center]{}
+      	{\usebeamercolor[fg]{structure} \Huge\textbf{{#2}}}
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[sep=2pt,center]{}
+      	{\usebeamercolor[fg]{palette tertiary}\Large\textbf{{#1}}}
+	\end{beamercolorbox}
+    \vfill%
+  \end{frame}%
+}
 }
 
 %%%%%										%%%%%
@@ -212,5 +215,4 @@
 \newcommand{\Bgreen}[1]{\boldsymbol{\textcolor{UFCGreen}{#1}}}
 \newcommand{\Borange}[1]{\boldsymbol{\textcolor{UFCOrange}{#1}}}
 \newcommand{\Bgold}[1]{\boldsymbol{\textcolor{UFCGold}{#1}}}
-
 \mode<all>

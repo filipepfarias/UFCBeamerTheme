@@ -1,22 +1,21 @@
+% !TEX root = UFCBeamerTheme.tex
 \mode<presentation>
-%Sidebar
-\useoutertheme[left, height=0pt,width=70pt]{sidebar}
-
+\iffalse
 % Frame title
 \defbeamertemplate*{frametitle}{ufc}[1][]
 {
 
-\begin{tikzpicture}
-\useasboundingbox (0,-0.05) rectangle(\the\paperwidth,0.95);
-
-% Three-colored line
- \fill[color=UFCGold] (-1,0) rectangle(0,1);
- \fill[color=UFCOrange] (0,0) rectangle(1,1);
- \fill[color=UFCBlue] (1,0) rectangle(\the\paperwidth,1);
- 
- % Logo in the orange box
- \node[inner sep=0pt] (logo) at (-0.5,0.5){\includegraphics[height=0.85cm]{graphics/brasao4_vertical_white}};
-\end{tikzpicture}
+%\begin{tikzpicture}
+%\useasboundingbox (-1,-1) rectangle(\the\paperwidth,0.95);
+%
+%% Three-colored line
+%% \fill[color=UFCGold] (-1,0) rectangle(0,1);
+%% \fill[color=UFCOrange] (0,0) rectangle(1,1);
+% \fill[color=UFCBlue] (-1,0) rectangle(\the\paperwidth,1);
+% 
+% % Logo in the orange box
+% \node[inner sep=0pt] (logo) at (-0.5,0.5){\includegraphics[height=0.85cm]{graphics/brasao4_vertical_white}};
+%\end{tikzpicture}
 
 % If we don't have a subtitle, put the title
 % at the center of the header
@@ -38,35 +37,35 @@
 
 \fi
 }
+\fi
 
 % Frame footer
 \addtobeamertemplate{footnote}{}{\vspace{1.5em}}
 \setbeamertemplate{footline}
 {
 \ifnum\thepage>1
-\begin{tikzpicture}
-\useasboundingbox (0,0) rectangle(\the\paperwidth,1);
+%\begin{tikzpicture}
+%\useasboundingbox (0,0) rectangle(\the\paperwidth,1);
+%
+%% Three-colored line
+%
+%\fill[color=UFCBlue] (2,1.25) rectangle(\the\paperwidth,1.3);
+%
+%\end{tikzpicture}
 
-% Three-colored line
-\fill[color=UFCGold] (0,1.25) rectangle(1,1.3);
-\fill[color=UFCOrange] (1,1.25) rectangle(2,1.3);
-\fill[color=UFCBlue] (2,1.25) rectangle(\the\paperwidth,1.3);
-
-\end{tikzpicture}
-
-\begin{textblock*}{0.9cm}(0.1cm,9.3cm)
-\raggedleft
-{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertframenumber/\inserttotalframenumber}
-\end{textblock*}
-
-\begin{textblock*}{3cm}(2cm,9.3cm)
-{\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor}
-\end{textblock*}
-
-\begin{textblock*}{7cm}(\dimexpr\the\paperwidth-7.8cm,9.3cm) 
-\raggedleft
-{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertshorttitle}
-\end{textblock*}
+%\begin{textblock*}{0.9cm}(0.1cm,9.3cm)
+%\raggedleft
+%{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertframenumber/\inserttotalframenumber}
+%\end{textblock*}
+%
+%\begin{textblock*}{3cm}(2cm,9.3cm)
+%{\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor}
+%\end{textblock*}
+%
+%\begin{textblock*}{7cm}(\dimexpr\the\paperwidth-7.8cm,9.3cm) 
+%\raggedleft
+%{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertshorttitle}
+%\end{textblock*}
 
 \fi % \ifnum\thepage>1
 }
