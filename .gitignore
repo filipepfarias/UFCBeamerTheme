@@ -1,3 +1,10 @@
 .DS_Store
 UFCBeamerTheme.tex
-
+*.log
+*.nav
+*.snm
+*.syntec.gz
+*.toc
+*.aux
+*.out
+*.bib
