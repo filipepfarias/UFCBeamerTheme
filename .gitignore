@@ -8,4 +8,7 @@ UFCBeamerTheme.tex
 *.aux
 *.out
 *.bib
-*.bib
+*.bbl
+*.bcf
+*.blg
+*run.xml
