@@ -21,6 +21,7 @@
 \RequirePackage{empheq}
 \RequirePackage{cancel}
 \RequirePackage{ragged2e}
+\RequirePackage{fontawesome}
 
 \usetikzlibrary{fit,backgrounds}
 \usetikzlibrary{bayesnet}
@@ -60,8 +61,11 @@
 \usecolortheme{ufc}
 \usefonttheme{ufc}
 
-% Bullets transparency
+% Bullets
 \setbeamercovered{transparent}
+\defbeamertemplate{itemize item}{chevron}{\usebeamerfont*{itemize item}\raise1.25pt\hbox{\faAngleRight}}
+\setbeamertemplate{items}[chevron]
+
 
 % Section titles
 \AtBeginSection[]{
