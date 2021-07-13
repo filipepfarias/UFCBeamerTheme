@@ -1,5 +1,8 @@
-\documentclass[usenames,dvipsnames,aspectratio=149, 8pt]{beamer}
+% !BIB program = biber
+\documentclass[usenames,dvipsnames,aspectratio=149,8pt]{beamer}
 
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
 \usepackage{beamerthemeufc} 
 % Just for note {\scshape Smaller Title}
 \title[\textbf{\uppercase{Smaller Title}}]{Example Presentation Created with the Beamer Package}
@@ -11,8 +14,12 @@
 
 
 %% Bibliography
-\usepackage[style=authoryear]{biblatex}
-\addbibresource{bibliography.bib}
+\usepackage[style=apa,backend=biber]{biblatex}
+\addbibresource{bibliography.bibtex}
+
+%%% Suppress biblatex annoying warning
+\usepackage{silence}
+\WarningFilter{biblatex}{Patching footnotes failed}
 
 \begin{document}
 
@@ -28,7 +35,7 @@
 This is a demonstration of {\bf\color{UFCOrange}UFC Beamer Theme} made by \insertshortauthor{}.
 
 \begin{itemize}
-\item<1-> Normal LaTeX class.
+\item<1-> Normal LaTeX class\parencite{article3}.
 \item<2-> Easy overlays Easy overlays Easy overlays Easy overlays Easy overlays Easy overlays.
 \item<3-> No external programs needed.      
 \end{itemize}
@@ -76,7 +83,6 @@ This is a demonstration of two columns.
     \end{examples}
 
 }
-
 \nocite{*}
 \begin{frame}[allowframebreaks]{Bibliography}
 \printbibliography
