@@ -2,7 +2,7 @@
 *.log
 *.nav
 *.snm
-*.syntec.gz
+*.synctex.gz
 *.toc
 *.aux
 *.out
@@ -11,3 +11,4 @@
 *.bcf
 *.blg
 *.run.xml
+*.vrb

@@ -15,6 +15,7 @@
 \mode<presentation>
 
 % Requirement
+\RequirePackage{verbatim}
 \RequirePackage{xcolor}	% colors
 \RequirePackage{tikz}	% drawing 
 \RequirePackage{soul} 	% text highlighting
@@ -22,6 +23,8 @@
 \RequirePackage{cancel}
 \RequirePackage{ragged2e}
 \RequirePackage{fontawesome}
+\RequirePackage{amsmath}
+\RequirePackage{pgfpages}
 
 \usetikzlibrary{fit,backgrounds}
 \usetikzlibrary{bayesnet}
@@ -29,7 +32,6 @@
 \usepackage{pgfplots} 
 \usepgfplotslibrary{fillbetween}
 \usepackage[margin=1cm,justification=justified]{caption}
-
 
 %Sidebar
 \useoutertheme[left, height=0pt, width=60pt]{sidebar}
@@ -41,6 +43,12 @@
 %\setbeamertemplate{frametitle}[default][right]
 % comment/uncomment this line to enable/disable debug mode
 %\newcommand*{\DEBUG}{}
+
+% Notes frame
+\ifdefined\NotesPages
+\setbeamertemplate{note page}[custom]
+\setbeameroption{show notes on second screen=right}
+\fi
 
 % Draft
 \iffalse
