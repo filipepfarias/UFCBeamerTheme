@@ -2,7 +2,7 @@
 *.log
 *.nav
 *.snm
-*.syntec.gz
+*.synctex.gz
 *.toc
 *.aux
 *.out
@@ -11,4 +11,8 @@
 *.bcf
 *.blg
 *.run.xml
+<<<<<<< HEAD
 *.icloud
+=======
+*.vrb
+>>>>>>> 199e8dcbfbe1b2a7618dbdbfdfe6363b6672ef6f

@@ -70,4 +70,19 @@
 \fi % \ifnum\thepage>1
 }
 
+% Notes pages
+\define@key{beamer@notepagegrid}{step}{\def\beamer@bggw{#1}}
+\define@key{beamer@notepagegrid}{color}{\def\beamer@bggc{\color{#1}}}
+
+\defbeamertemplate*{note page}{custom}[1][]
+{%
+  \setkeys{beamer@notepagegrid}{step=0.5cm,color=fg!10!bg}%
+  \setkeys{beamer@notepagegrid}{#1}%
+  \begin{pgfpicture}{0cm}{0cm}{\the\paperwidth}{\the\paperheight}
+    \beamer@bggc
+    \pgfpathgrid[stepx=\beamer@bggw,stepy=\beamer@bggw]{\pgfpointorigin}{\pgfpoint{\the\paperwidth}{\the\paperheight}}
+    \pgfusepath{stroke}
+  \end{pgfpicture}%
+}
+
 \mode<all>
